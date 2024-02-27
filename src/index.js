@@ -7,11 +7,16 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css';
+//import ImageDisplay from './ImageDisplay';
+//import CollegeDashboard from './CollegeDashboard';
+//import Login from './Login';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
           <ToastContainer/>
-    <Routerpage />
+   <Routerpage/>
   </React.StrictMode>
 );
 

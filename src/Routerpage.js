@@ -2,34 +2,32 @@ import React from "react";
 import Login from "./Login";
 import FrontPage from "./FrontPage";
 import Signup from "./Signup";
-import { BrowserRouter,Route,Routes } from "react-router-dom";
-import Admin from "./Admin";
-import College
- from "./College";
-import Police from "./Police";
-import Passport from "./Passportstaff";
-function Routerpage(){
-    return(
-        <div>
-            <BrowserRouter pathname="">
-                <Routes>
-                    <Route path="/" element={<FrontPage />}></Route>
-                        <Route path="Login" element={<Login />}></Route>
-                        <Route path="Signup" element={<Signup />}></Route>
-                        <Route path="Admin" element={<Admin />}></Route>
-                        <Route path="College" element={<College />}></Route>
-                        <Route path="Police" element={<Police />}></Route>
-                        <Route path="Passportstaff" element={<Passport />}></Route>
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Admin from "./Admin/Admin";
+import PoliceDB from "./Police/PoliceDB";
+import PassportstaffDB from "./Passportstaff/PassportstaffDB";
+import CollegeDashboard from "./College/CollegeDashboard";
+import CollegeDB from "./College/CollegeDB";
 
+function Routerpage() {
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<FrontPage />} />
 
-
-                        
-
-                    
-                </Routes>
-            </BrowserRouter>
-        </div>
-    );
+          <Route path="Login" element={<Login />} />
+          <Route path="Signup" element={<Signup />} />
+          <Route path="Admin/*" element={<Admin />}>
+              <Route path="CollegeDB" element={<CollegeDB />}/>
+              <Route path="PoliceDB" element={<PoliceDB />} />
+              <Route path="PassportstaffDB" element={<PassportstaffDB />} />
+            </Route>
+            <Route path="CollegeDashboard" element={<CollegeDashboard />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default Routerpage;
