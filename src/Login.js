@@ -9,7 +9,7 @@ import Admin from './Admin/Admin';
 import CollegeDB from './College/CollegeDB';
 import PoliceDB from './Police/PoliceDB';
 import PassportstaffDB from './Passportstaff/PassportstaffDB';
-import App from "./App.css";
+import PoliceDashboard from './Police/PoliceDashboard';
 
 
 
@@ -32,24 +32,22 @@ function Login() {
     axios.post('http://localhost:8080/LoginVerify', data)
     .then((_res) => {
     
-      console.log(type);
-
+      toast.success("Login successful");
+      sessionStorage.setItem("email", email);
       if (type === "Admin"){
         navigate('/Admin');
       }
-      else if (type === "Poloice"){
-        navigate('/PoliceDB');
+      else if (type === "Police"){
+        navigate('/PoliceDashboard');
       }
       
       else if(type === "College"){
-        navigate('/CollegeDB');
+        navigate('/CollegeDashboard');
       }
       else if (type === "Passport"){
-        navigate('/PassportstafDB')
+        navigate('/PassportstaffDashboard')
       }
-      sessionStorage.setItem("UserId", email);
-      toast.success("Login successful");
-      sessionStorage("email" , _res.id);
+      
     })
 
     
@@ -72,7 +70,7 @@ return (
             <label htmlFor="Type">Select User Type</label>
             <div>
               <select  id="Type" className='form-select mb-2 w-50' onChange={(e) => setType(e.target.value)}>
-                <option></option>
+                <option>Select User Type</option>
                 <option value="Admin">Admin</option>
                 <option value="Police">Police</option>
                 <option value="College">College</option>

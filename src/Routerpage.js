@@ -8,6 +8,8 @@ import PoliceDB from "./Police/PoliceDB";
 import PassportstaffDB from "./Passportstaff/PassportstaffDB";
 import CollegeDashboard from "./College/CollegeDashboard";
 import CollegeDB from "./College/CollegeDB";
+import PassportstaffDashboard from "./Passportstaff/PassportstaffDashboard";
+import PoliceDashbaord from "./Police/PoliceDashboard";
 
 function Routerpage() {
   return (
@@ -18,6 +20,10 @@ function Routerpage() {
 
           <Route path="Login" element={<Login />} />
           <Route path="Signup" element={<Signup />} />
+          <Route path="PassportStaffDashboard" element ={< PassportstaffDashboard/>}/>
+          <Route path="PoliceDashboard" element ={< PoliceDashbaord/>}/>
+          
+
           <Route path="Admin/*" element={<Admin />}>
               <Route path="CollegeDB" element={<CollegeDB />}/>
               <Route path="PoliceDB" element={<PoliceDB />} />

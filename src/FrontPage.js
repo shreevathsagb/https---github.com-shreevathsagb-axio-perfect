@@ -17,8 +17,8 @@ function FrontPage(){
                     <div class="text">
                         <h1 className="text-light">Welcome to Foreign Student Monitoring System</h1>
                     </div>
-                    <Link to="/Login" className="text-light ">Login</Link>
-                    <Link to="/Signup" className="text-light">Sign up</Link>
+                    <Link style={{fontSize : "25px"}}to="/Login" className="text-light ">Login</Link>
+                    <Link style={{fontSize : "25px"}} to="/Signup" className="text-light">Sign up</Link>
                 </Container>
 
             </Navbar>
